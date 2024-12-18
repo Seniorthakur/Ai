@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Caption Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .caption {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>AI Instagram Caption Generator</h1>
+    
+    <form method="POST" action="/generate_caption">
+        <label for="topic">Enter Topic</label>
+        <input type="text" id="topic" name="topic" required placeholder="E.g., travel, food, fitness, etc." />
+        
+        <button type="submit">Generate Caption</button>
+    </form>
+
+    {% if caption %}
+    <div class="caption">
+        <h2>Generated Caption:</h2>
+        <p>{{ caption }}</p>
+    </div>
+    {% endif %}
+</div>
+
+</body>
+</html>
